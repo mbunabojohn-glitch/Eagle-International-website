@@ -130,7 +130,7 @@ const AboutPage: React.FC = () => {
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
-            src="/images/Petroleum-Logistics.jpg"
+            src="/images/About-hero.jpg"
             alt="About Eagle International Group"
             className="w-full h-full object-cover object-center"
           />
@@ -156,7 +156,7 @@ const AboutPage: React.FC = () => {
         index={0}
         title="Our Heritage"
         subtitle="Est. 1999"
-        image="/images/Chain-Enhancement.jpg"
+        image="/images/Petroleum-Logistics.jpg"
         description={
           <>
             <p>
@@ -180,7 +180,7 @@ const AboutPage: React.FC = () => {
         index={1}
         title="Global Impact"
         subtitle="World-Class Partnerships"
-        image="/images/Engineering-Service.jpg"
+        image="/images/Global-Impact.jpg"
         description={
           <>
             <p>
@@ -202,7 +202,7 @@ const AboutPage: React.FC = () => {
         index={2}
         title="Strategic Evolution"
         subtitle="Future Focused"
-        image="/images/Oil-Gas.jpg"
+        image="/images/Strategic-Evolution.jpg"
         description={
           <>
             <p>

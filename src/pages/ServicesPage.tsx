@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 import { clsx } from 'clsx';
-import { motion } from 'framer-motion';
 import Card from '@components/common/Card';
 import Loader from '@components/common/Loader';
 import CTA from '@components/features/CTA';
@@ -121,13 +120,24 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-dark-secondary text-white py-24 border-b-2 border-orange-primary text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-orange-primary bg-dark-secondary text-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/images/Service-hero.jpg"
+            alt="Eagle International Services"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+        </div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 uppercase tracking-tighter">
-              Our Services
+            <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white drop-shadow-2xl leading-tight">
+              Our <span className="text-orange-primary">Services</span>
             </h1>
-            <p className="text-2xl text-grey-medium font-light">
+            <p className="text-xl md:text-2xl text-grey-light font-light drop-shadow-lg max-w-3xl mx-auto">
               Comprehensive solutions for international trade, energy, and engineering
             </p>
           </div>

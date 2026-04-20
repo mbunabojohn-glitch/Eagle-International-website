@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import type { ButtonProps } from '@types';
+import type { ButtonProps, ButtonVariant, ButtonSize } from '@types';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -9,13 +9,13 @@ function cn(...inputs: ClassValue[]) {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', isLoading, fullWidth, children, disabled, ...props }, ref) => {
-    const variants = {
+    const variants: Record<ButtonVariant, string> = {
       primary: 'bg-orange-primary text-white hover:bg-orange-dark shadow-md hover:shadow-lg',
       secondary: 'bg-dark-secondary text-white hover:bg-dark-tertiary border border-dark-tertiary',
       outline: 'bg-transparent border-2 border-orange-primary text-orange-primary hover:bg-orange-primary hover:text-white',
     };
 
-    const sizes = {
+    const sizes: Record<ButtonSize, string> = {
       sm: 'px-4 py-2 text-sm',
       md: 'px-6 py-3 text-base',
       lg: 'px-8 py-4 text-lg',
