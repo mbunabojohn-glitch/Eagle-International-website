@@ -1,5 +1,5 @@
 import api from "./base";
-import type { ServiceResponse, ContactFormData, ContactResponse } from "@types";
+import type { ServiceResponse, ContactFormData, ContactResponse } from "../types";
 
 // Services API
 export const servicesApi = {
@@ -40,8 +40,7 @@ export const partnersApi = {
   },
 };
 
-// Mock data for development (remove when backend is ready)
-export const mockServices: ServiceResponse = [
+const mockServices: ServiceResponse = [
   {
     id: "1",
     title: "Oil & Gas Trading",

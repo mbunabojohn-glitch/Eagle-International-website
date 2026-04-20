@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import type { ButtonProps, ButtonVariant, ButtonSize } from '@types';
+import type { ButtonProps, ButtonVariant, ButtonSize } from '../../types';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

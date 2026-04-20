@@ -4,7 +4,9 @@ export type {
   ButtonProps, 
   CardProps, 
   LoaderProps, 
-  HeroSlide 
+  HeroSlide,
+  NavigationLink,
+  Stat
 } from "./common";
 
 export type { 

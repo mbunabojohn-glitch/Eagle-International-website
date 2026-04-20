@@ -1,6 +1,6 @@
 import React from "react";
-import { useCounterAnimation } from "@hooks/useCounterAnimation";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
+import { useCounterAnimation } from "../../hooks/useCounterAnimation";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 interface StatItemProps {
   value: number;

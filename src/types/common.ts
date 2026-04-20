@@ -33,3 +33,18 @@ export interface HeroSlide {
   highlight?: string;
   image?: string;
 }
+
+// Navigation Types
+export interface NavigationLink {
+  id: string;
+  label: string;
+  path: string;
+}
+
+// Stat Types
+export interface Stat {
+  id: string;
+  value: number;
+  label: string;
+  suffix?: string;
+}

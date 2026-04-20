@@ -1,8 +1,8 @@
-import { useCarousel } from "@hooks/useCarousel";
+import { useCarousel } from "../../hooks/useCarousel";
 import clsx from "clsx";
-import type { HeroSlide } from "@types";
+import type { HeroSlide } from "../../types";
 import { Link } from "react-router-dom";
-import Button from "@components/common/Button";
+import Button from "../common/Button";
 
 const HeroCarousel = () => {
   const { currentSlide, slides } = useCarousel();

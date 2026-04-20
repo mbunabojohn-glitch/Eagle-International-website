@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useUIStore } from '@store';
-import Logo from './Logo.tsx';
-import Navigation from './Navigation.tsx';
-import MobileMenu from './MobileMenu.tsx';
+import { useUIStore } from '../../store/useUIStore';
+import Logo from './Logo';
+import Navigation from './Navigation';
+import MobileMenu from './MobileMenu';
 import { clsx } from 'clsx';
 
 const Header = () => {

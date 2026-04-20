@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 import { clsx } from 'clsx';
-import Card from '@components/common/Card';
-import Loader from '@components/common/Loader';
-import CTA from '@components/features/CTA';
-import { useScrollAnimation } from '@hooks/useScrollAnimation';
-import { servicesApi } from '@api/services';
-import type { Service } from '@types';
+import Card from '../components/common/Card';
+import Loader from '../components/common/Loader';
+import CTA from '../components/features/CTA';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { servicesApi } from '../api/services';
+import type { Service } from '../types';
 
 const ServiceRow: React.FC<{ service: Service; index: number }> = ({ service, index }) => {
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -97,9 +97,12 @@ const ServiceRow: React.FC<{ service: Service; index: number }> = ({ service, in
 const ServicesPage: React.FC = () => {
   const location = useLocation();
 
-  const { data: services, isLoading } = useQuery({
+  const { data: services, isLoading } = useQuery<Service[]>({
     queryKey: ['services'],
-    queryFn: servicesApi.getAll,
+    queryFn: async () => {
+      const data = await servicesApi.getAll();
+      return data;
+    },
   });
 
   useEffect(() => {

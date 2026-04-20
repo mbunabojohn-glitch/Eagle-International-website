@@ -1,5 +1,5 @@
-import { useUIStore } from "@store";
-import Navigation from "./Navigation.tsx";
+import { useUIStore } from "../../store/useUIStore";
+import Navigation from "./Navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MobileMenu = () => {
