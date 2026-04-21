@@ -23,27 +23,21 @@
     /* Path Mappings */
     "paths": {
       "@/*": ["./src/*"],
-      "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
-      "@pages": ["./src/pages"],
       "@pages/*": ["./src/pages/*"],
-      "@hooks": ["./src/hooks"],
       "@hooks/*": ["./src/hooks/*"],
-      "@store": ["./src/store"],
       "@store/*": ["./src/store/*"],
-      "@services": ["./src/services"],
       "@services/*": ["./src/services/*"],
       "@types": ["./src/types"],
       "@types/*": ["./src/types/*"],
-      "@utils": ["./src/utils"],
       "@utils/*": ["./src/utils/*"],
-      "@styles": ["./src/styles"],
-      "@styles/*": ["./src/styles/*"],
-      "@api": ["./src/api"],
-      "@api/*": ["./src/api/*"]
+      "@styles/*": ["./src/styles/*"]
     },
     "types": ["vite/client", "node"]
   },
   "include": ["src", "vite.config.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
