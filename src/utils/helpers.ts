@@ -1,4 +1,4 @@
-import type { ContactFormData, ContactFormErrors } from "@types";
+import type { ContactFormData, ContactFormErrors } from "../types";
 
 /**
  * Format number with thousand separators
@@ -82,7 +82,7 @@ export const debounce = <T extends (...args: any[]) => any>(
   func: T,
   wait: number,
 ): ((...args: Parameters<T>) => void) => {
-  let timeout: NodeJS.Timeout | null = null;
+  let timeout: any;
 
   return (...args: Parameters<T>) => {
     if (timeout) clearTimeout(timeout);
