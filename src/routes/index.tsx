@@ -7,6 +7,8 @@ import {
   PartnersPage as Partners,
   MissionPage as Mission,
   ContactPage as Contact,
+  PrivacyPolicy,
+  TermsOfService,
 } from "../pages";
 
 const AppRoutes = () => {
@@ -19,6 +21,8 @@ const AppRoutes = () => {
         <Route path="partners" element={<Partners />} />
         <Route path="mission" element={<Mission />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="privacy" element={<PrivacyPolicy />} />
+        <Route path="terms" element={<TermsOfService />} />
       </Route>
     </Routes>
   );

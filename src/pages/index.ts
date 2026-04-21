@@ -4,3 +4,5 @@ export { default as ServicesPage } from "./ServicesPage";
 export { default as PartnersPage } from "./PartnersPage";
 export { default as MissionPage } from "./MissionPage";
 export { default as ContactPage } from "./ContactPage";
+export { default as PrivacyPolicy } from "./PrivacyPolicy";
+export { default as TermsOfService } from "./TermsOfService";
