@@ -16,8 +16,7 @@ const defaultServices: Service[] = [
   {
     id: "1",
     title: "Oil & Gas Trading",
-    description:
-      "Crude oil and petroleum products trading with strategic partnerships across global markets.",
+    description: "Crude oil and petroleum products trading with strategic partnerships across global markets.",
     icon: "⚡",
     features: [],
     image: "/images/Oil-Gas.jpg",
@@ -25,8 +24,7 @@ const defaultServices: Service[] = [
   {
     id: "2",
     title: "Renewable Energy",
-    description:
-      "Solar thermal panels, wind power stations, and sustainable energy solutions.",
+    description: "Solar thermal panels, wind power stations, and sustainable energy solutions.",
     icon: "🌞",
     features: [],
     image: "/images/Renewable-Energy.jpg",
@@ -34,8 +32,7 @@ const defaultServices: Service[] = [
   {
     id: "3",
     title: "Engineering Services",
-    description:
-      "Civil engineering, construction, and project management for multinational clients.",
+    description: "Civil engineering, construction, and project management for multinational clients.",
     icon: "🏗️",
     features: [],
     image: "/images/Engineering-Service.jpg",
@@ -43,8 +40,7 @@ const defaultServices: Service[] = [
   {
     id: "4",
     title: "Supply Chain Enhancement",
-    description:
-      "Value chain optimization and procurement solutions with global strategic partners.",
+    description: "Value chain optimization and procurement solutions with global strategic partners.",
     icon: "🔗",
     features: [],
     image: "/images/Chain-Enhancement.jpg",
@@ -60,8 +56,8 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
   const displayServices = limit ? services.slice(0, limit) : services;
 
   const bookVariants = {
-    hidden: { 
-      rotateY: -90, 
+    hidden: {
+      rotateY: -90,
       opacity: 0,
       transformOrigin: "left"
     },
@@ -77,23 +73,22 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
   };
 
   return (
-    <section ref={elementRef} className="py-24 bg-dark-primary overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={elementRef} className="py-12 md:py-24 bg-dark-primary overflow-hidden">
+      <div className="container-custom">
         <div
-          className={`text-center mb-20 transform transition-all duration-1000 ${
+          className={`text-center mb-12 md:mb-20 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 uppercase tracking-tighter">
             Our <span className="text-orange-primary">Services</span>
           </h2>
-          <p className="text-xl text-grey-medium max-w-3xl mx-auto font-light leading-relaxed">
-            Comprehensive solutions designed to drive growth and excellence
-            across energy and engineering sectors worldwide.
+          <p className="text-base sm:text-lg md:text-xl text-grey-medium max-w-3xl mx-auto font-light leading-relaxed px-4">
+            Comprehensive solutions designed to drive growth and excellence across energy and engineering sectors worldwide.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 perspective-1000">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 perspective-1000">
           {displayServices.map((service, index) => (
             <motion.div
               key={service.id}
@@ -101,15 +96,14 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={bookVariants}
-              className="group h-[450px] relative preserve-3d cursor-pointer"
+              className="group h-[380px] sm:h-[420px] md:h-[450px] relative preserve-3d cursor-pointer"
             >
               <Card className="h-full w-full p-0 overflow-hidden relative border-none bg-dark-secondary rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-                {/* Background Image with Overlay */}
                 <div className="absolute inset-0 z-0">
                   {service.image ? (
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
+                    <img
+                      src={service.image}
+                      alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
@@ -118,28 +112,25 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                 </div>
 
-                {/* Content Container */}
-                <div className="absolute inset-0 z-10 p-8 flex flex-col justify-end h-full">
-                  {/* Icon & Title - Always Visible */}
-                  <div className="transform transition-transform duration-500 group-hover:-translate-y-32">
-                    <div className="text-4xl mb-4 bg-orange-primary/20 w-16 h-16 rounded-xl flex items-center justify-center backdrop-blur-sm border border-orange-primary/30">
+                <div className="absolute inset-0 z-10 p-4 sm:p-6 md:p-8 flex flex-col justify-end h-full">
+                  <div className="transform transition-transform duration-500 group-hover:-translate-y-24 sm:group-hover:-translate-y-28 md:group-hover:-translate-y-32">
+                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 bg-orange-primary/20 w-12 h-12 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center backdrop-blur-sm border border-orange-primary/30">
                       {service.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-white uppercase tracking-tight leading-tight mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight mb-2">
                       {service.title}
                     </h3>
                   </div>
 
-                  {/* Description & Button - Revealed on Hover */}
-                  <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                    <p className="text-grey-light text-sm mb-6 leading-relaxed line-clamp-3">
+                  <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-4 sm:left-6 md:left-8 right-4 sm:right-6 md:right-8 opacity-0 group-hover:opacity-100 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                    <p className="text-grey-light text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed line-clamp-3">
                       {service.description}
                     </p>
                     <Link to={`/services#service-${service.id}`} className="block">
-                      <Button 
-                        variant="primary" 
-                        fullWidth 
-                        className="py-4 text-sm font-bold shadow-lg shadow-orange-primary/20"
+                      <Button
+                        variant="primary"
+                        fullWidth
+                        className="py-3 sm:py-4 text-xs sm:text-sm font-bold shadow-lg shadow-orange-primary/20"
                       >
                         Learn More
                       </Button>
@@ -147,7 +138,6 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
                   </div>
                 </div>
 
-                {/* Decorative border revealed on hover */}
                 <div className="absolute inset-0 border-2 border-orange-primary/0 group-hover:border-orange-primary/50 rounded-2xl transition-colors duration-500 pointer-events-none" />
               </Card>
             </motion.div>
@@ -155,12 +145,12 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
         </div>
 
         {showViewAll && (
-          <div className="text-center mt-20">
+          <div className="text-center mt-12 md:mt-20">
             <Link to="/services">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="px-12 py-4 border-white text-white hover:bg-white hover:text-black font-bold tracking-widest"
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 sm:px-12 py-3 sm:py-4 border-white text-white hover:bg-white hover:text-black font-bold tracking-wider text-sm sm:text-base"
               >
                 VIEW ALL SERVICES
               </Button>

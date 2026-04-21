@@ -25,31 +25,30 @@ const CTA: React.FC<CTAProps> = ({
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={elementRef} className="py-24 bg-orange-primary relative overflow-hidden">
-      {/* Decorative background elements */}
+    <section ref={elementRef} className="py-16 md:py-24 bg-orange-primary relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+        <div className="absolute -top-24 -left-24 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-white blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-white blur-3xl"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-custom relative z-10">
         <div
           className={`text-center transform transition-all duration-1000 ${
             isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 uppercase tracking-tighter leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 uppercase tracking-tighter leading-tight">
             {title}
           </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto font-light px-4">
             {description}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 px-4">
             <Link to={primaryButton.link} className="w-full sm:w-auto">
               <Button
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto bg-white text-orange-primary hover:bg-dark-primary hover:text-white border-none shadow-xl"
+                className="w-full sm:w-auto bg-white text-orange-primary hover:bg-dark-primary hover:text-white border-none shadow-xl px-6 sm:px-10 py-3 sm:py-4"
               >
                 {primaryButton.text}
               </Button>
@@ -59,7 +58,7 @@ const CTA: React.FC<CTAProps> = ({
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-orange-primary"
+                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-orange-primary px-6 sm:px-10 py-3 sm:py-4"
                 >
                   {secondaryButton.text}
                 </Button>

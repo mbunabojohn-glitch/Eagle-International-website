@@ -19,11 +19,11 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, suffix = "" }) => {
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <div className="text-5xl md:text-6xl font-bold text-orange-primary mb-2">
+      <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-orange-primary mb-1 sm:mb-2">
         {Math.round(count)}
         {suffix}
       </div>
-      <div className="text-lg text-grey-medium">{label}</div>
+      <div className="text-sm sm:text-base md:text-lg text-grey-medium">{label}</div>
     </div>
   );
 };
@@ -37,9 +37,9 @@ const Stats: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-dark-secondary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+    <section className="py-12 md:py-20 bg-dark-secondary">
+      <div className="container-custom">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
           {stats.map((stat, index) => (
             <StatItem
               key={index}
