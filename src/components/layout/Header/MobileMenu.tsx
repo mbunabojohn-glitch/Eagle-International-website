@@ -1,4 +1,4 @@
-import { useUIStore } from "@store/useUIStore";
+import { useUIStore } from "../../../store/useUIStore";
 import Navigation from "./Navigation";
 import { motion, AnimatePresence } from "framer-motion";
 

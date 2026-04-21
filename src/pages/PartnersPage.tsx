@@ -1,8 +1,8 @@
 import React from "react";
 import { clsx } from "clsx";
-import Card from "@components/common/Card";
-import CTA from "@components/features/CTA";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
+import Card from "../components/common/Card";
+import CTA from "../components/features/CTA";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const PartnersPage: React.FC = () => {
   const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.1 });

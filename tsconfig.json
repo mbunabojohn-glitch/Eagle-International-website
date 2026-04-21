@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    "forceConsistentCasingInFileNames": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -28,7 +29,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@store/*": ["src/store/*"],
       "@store": ["src/store/index"],
-      "@services/*": ["src/services/*"],
+      "@services/*": ["src/api/*"],
       "@api/*": ["src/api/*"],
       "@types": ["src/types/index"],
       "@types/*": ["src/types/*"],
@@ -37,6 +38,9 @@
     },
     "types": ["vite/client", "node"]
   },
-  "include": ["src", "vite.config.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

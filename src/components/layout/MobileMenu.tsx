@@ -39,8 +39,11 @@ const MobileMenu = () => {
               </button>
             </div>
             
-            <div className="flex-grow overflow-y-auto py-4">
-              <Navigation mobile onItemClick={closeMobileMenu} />
+            <div className="flex flex-col h-full justify-center items-center">
+              <Navigation 
+                className="space-y-8"
+                onItemClick={closeMobileMenu} 
+              />
             </div>
 
             <div className="p-6 border-t border-white/10 mt-auto">

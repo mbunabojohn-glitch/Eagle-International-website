@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'react'
-import { useCarouselStore } from '@store'
-import { CAROUSEL_INTERVAL } from '@utils/constants'
+import { useCarouselStore } from '../store/useCarouselStore'
+import { CAROUSEL_INTERVAL } from '../utils/constants'
 
 export const useCarousel = () => {
   const {

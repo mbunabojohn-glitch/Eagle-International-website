@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useUIStore } from '@store/useUIStore';
+import { useUIStore } from '../../../store/useUIStore';
 import Logo from './Logo';
 import Navigation from './Navigation';
 import MobileMenu from './MobileMenu';

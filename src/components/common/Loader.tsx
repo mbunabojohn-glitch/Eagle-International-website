@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { LoaderProps } from "@types";
+import type { LoaderProps } from "../../types";
 
 const Loader = ({ size = "md", text, fullScreen = false }: LoaderProps) => {
   const sizeClasses = {

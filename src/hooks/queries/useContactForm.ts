@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import api from "@services/api";
-import type { ContactFormData, ContactResponse } from "@types";
+import api from "../../api/base";
+import type { ContactFormData, ContactResponse } from "../../types";
 
 export const useContactForm = () => {
   return useMutation<ContactResponse, Error, ContactFormData>({

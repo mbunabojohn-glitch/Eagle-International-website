@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { servicesApi, mockServices } from '@services/services.api'
+import { servicesApi, mockServices } from '../../api/services'
 
 export const useServices = () => {
   return useQuery({

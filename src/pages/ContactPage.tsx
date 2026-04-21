@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { clsx } from "clsx";
-import Button from "@components/common/Button";
-import Card from "@components/common/Card";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
+import Button from "../components/common/Button";
+import Card from "../components/common/Card";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const ContactPage: React.FC = () => {
-  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.1 });
-  const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation({ threshold: 0.1 });
+  const { elementRef: formRef, isVisible: formVisible } = useScrollAnimation();
 
   const [formData, setFormData] = useState({
     name: "",

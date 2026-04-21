@@ -40,7 +40,7 @@ export const partnersApi = {
   },
 };
 
-const mockServices: ServiceResponse = [
+export const mockServices: ServiceResponse = [
   {
     id: "1",
     title: "Oil & Gas Trading",

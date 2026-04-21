@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
-import { NAVIGATION_LINKS } from "@utils/constants";
+import { NAVIGATION_LINKS } from "../../../utils/constants";
+import type { NavigationLink } from "../../../types";
 
 interface NavigationProps {
   mobile?: boolean;
@@ -14,7 +15,7 @@ const Navigation = ({ mobile, onItemClick }: NavigationProps) => {
         "flex",
         mobile ? "flex-col space-y-2 p-4" : "items-center space-x-1"
       )}>
-        {NAVIGATION_LINKS.map((link) => (
+        {NAVIGATION_LINKS.map((link: NavigationLink) => (
           <li key={link.id} className={mobile ? "w-full" : ""}>
             <NavLink
               to={link.path}

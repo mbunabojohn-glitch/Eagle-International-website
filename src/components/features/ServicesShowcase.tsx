@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Card from "@components/common/Card";
-import Button from "@components/common/Button";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
-import type { Service } from "@types";
+import Card from "../common/Card";
+import Button from "../common/Button";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import type { Service } from "../../types";
 
 interface ServicesShowcaseProps {
   services?: Service[];

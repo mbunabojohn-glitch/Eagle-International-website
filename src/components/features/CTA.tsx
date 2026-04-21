@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "@components/common/Button";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
+import Button from "../common/Button";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 interface CTAProps {
   title: string;

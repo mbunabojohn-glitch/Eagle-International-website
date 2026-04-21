@@ -1,40 +1,42 @@
 import { Link } from "react-router-dom";
-import { COMPANY_INFO, NAVIGATION_LINKS, CORE_VALUES } from "@utils/constants";
+import { NAVIGATION_LINKS, COMPANY_INFO, SITE_TAGLINE, CORE_VALUES } from "../../../utils/constants";
+import type { NavigationLink } from "../../../types";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-secondary border-t-2 border-orange-primary pt-16 pb-8">
+    <footer className="bg-dark-secondary border-t border-dark-tertiary pt-16 pb-8">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <h4 className="font-heading text-xl font-bold text-orange-primary mb-6 uppercase">
-              Eagle International Group
-            </h4>
-            <p className="text-grey-light leading-relaxed mb-4">
-              A premier engineering and energy solutions provider with over 25
-              years of excellence in delivering innovative, sustainable, and
-              efficient solutions across global markets.
+          <div className="space-y-6">
+            <Link to="/" className="inline-block">
+              <span className="text-2xl font-black uppercase tracking-tighter text-white">
+                Eagle <span className="text-orange-primary">International</span>
+              </span>
+            </Link>
+            <p className="text-grey-light font-light leading-relaxed">
+              {SITE_TAGLINE}
             </p>
-            <p className="text-grey-light">
-              <strong className="text-white">Core Values:</strong>{" "}
-              {CORE_VALUES.join(" • ")}
-            </p>
+            <div className="flex space-x-4">
+              {CORE_VALUES.map((value) => (
+                <span key={value} className="text-xs uppercase tracking-widest text-orange-primary/60">
+                  {value}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-xl font-bold text-orange-primary mb-6 uppercase">
-              Quick Links
-            </h4>
-            <ul className="space-y-3">
-              {NAVIGATION_LINKS.map((link) => (
+            <h4 className="text-white font-bold uppercase tracking-wider mb-6">Quick Links</h4>
+            <ul className="space-y-4">
+              {NAVIGATION_LINKS.map((link: NavigationLink) => (
                 <li key={link.id}>
-                  <Link
+                  <Link 
                     to={link.path}
-                    className="text-grey-light hover:text-orange-primary transition-colors duration-300"
+                    className="text-grey-medium hover:text-orange-primary transition-colors duration-300 font-light"
                   >
                     {link.label}
                   </Link>

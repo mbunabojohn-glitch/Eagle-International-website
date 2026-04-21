@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SITE_NAME } from "@utils/constants";
+import { SITE_NAME } from "../../../utils/constants";
 
 const Logo = () => {
   return (

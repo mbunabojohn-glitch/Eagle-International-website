@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "@components/common/Card";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
+import Card from "../common/Card";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 interface InfoCard {
   title: string;

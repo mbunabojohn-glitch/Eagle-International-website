@@ -1,9 +1,8 @@
 import React from "react";
 import { clsx } from "clsx";
-import InfoCards from "@components/features/InfoCards";
-import CTA from "@components/features/CTA";
-import Card from "@components/common/Card";
-import { useScrollAnimation } from "@hooks/useScrollAnimation";
+import CTA from "../components/features/CTA";
+import Card from "../components/common/Card";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const MissionPage: React.FC = () => {
   const { elementRef: mvRef, isVisible: mvVisible } = useScrollAnimation({ threshold: 0.1 });
