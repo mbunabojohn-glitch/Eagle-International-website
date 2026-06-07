@@ -28,8 +28,8 @@ const ServiceRow: React.FC<{ service: Service; index: number }> = ({ service, in
             !isEven ? "md:order-2" : ""
           )}
         >
-           <div className="absolute -inset-4 bg-orange-primary/10 rounded-3xl blur-2xl group-hover:bg-orange-primary/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-           <Card className="relative h-[400px] lg:h-[500px] bg-dark-secondary border border-white/5 shadow-2xl overflow-hidden rounded-2xl p-0">
+           <div className="absolute -inset-4 bg-blue-primary/10 rounded-3xl blur-2xl group-hover:bg-blue-primary/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+           <Card className="relative h-[400px] lg:h-[500px] bg-light-secondary dark:bg-dark-secondary border border-white/5 shadow-2xl overflow-hidden rounded-2xl p-0">
               {service.image ? (
                 <img 
                   src={service.image} 
@@ -37,13 +37,13 @@ const ServiceRow: React.FC<{ service: Service; index: number }> = ({ service, in
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-8xl bg-dark-tertiary">
+                <div className="w-full h-full flex items-center justify-center text-8xl bg-light-tertiary dark:bg-dark-tertiary">
                   {service.icon}
                 </div>
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="inline-block px-4 py-1 rounded-full bg-orange-primary/20 backdrop-blur-md border border-orange-primary/30 text-orange-primary text-xs font-bold uppercase tracking-widest mb-2">
+                <span className="inline-block px-4 py-1 rounded-full bg-blue-primary/20 backdrop-blur-md border border-blue-primary/30 text-blue-primary text-xs font-bold uppercase tracking-widest mb-2">
                   Sector {index + 1}
                 </span>
               </div>
@@ -59,21 +59,21 @@ const ServiceRow: React.FC<{ service: Service; index: number }> = ({ service, in
         >
           <div className="space-y-4">
             <div className="inline-flex items-center gap-4">
-              <span className="text-5xl bg-orange-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center text-orange-primary border border-orange-primary/20 shadow-inner">
+              <span className="text-5xl bg-blue-primary/10 w-20 h-20 rounded-2xl flex items-center justify-center text-blue-primary border border-blue-primary/20 shadow-inner">
                 {service.icon}
               </span>
-              <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+              <h2 className="text-4xl lg:text-5xl font-black text-slate-800 dark:text-white uppercase tracking-tighter leading-none">
                 {service.title.split(' ').map((word, i) => (
-                  <span key={i} className={i === 0 ? "text-white" : "text-orange-primary"}>
+                  <span key={i} className={i === 0 ? "text-slate-800 dark:text-white" : "text-blue-primary"}>
                     {word}{' '}
                   </span>
                 ))}
               </h2>
             </div>
-            <div className="h-1 w-24 bg-orange-primary rounded-full"></div>
+            <div className="h-1 w-24 bg-blue-primary rounded-full"></div>
           </div>
           
-          <p className="text-xl text-grey-medium leading-relaxed font-light italic border-l-4 border-orange-primary/30 pl-6">
+          <p className="text-xl text-grey-medium leading-relaxed font-light italic border-l-4 border-blue-primary/30 pl-6">
             {service.description}
           </p>
 
@@ -81,9 +81,9 @@ const ServiceRow: React.FC<{ service: Service; index: number }> = ({ service, in
             {service.features && service.features.map((feature: string, idx: number) => (
               <div
                 key={idx}
-                className="flex items-start gap-3 bg-dark-secondary/50 p-4 rounded-xl border border-white/5 hover:border-orange-primary/30 transition-all hover:bg-dark-secondary group"
+                className="flex items-start gap-3 bg-light-secondary dark:bg-dark-secondary/50 p-4 rounded-xl border border-white/5 hover:border-blue-primary/30 transition-all hover:bg-light-secondary dark:bg-dark-secondary group"
               >
-                <span className="text-orange-primary mt-1 group-hover:scale-125 transition-transform">✓</span>
+                <span className="text-blue-primary mt-1 group-hover:scale-125 transition-transform">✓</span>
                 <span className="text-grey-light text-sm font-medium tracking-wide uppercase">{feature}</span>
               </div>
             ))}
@@ -123,7 +123,7 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-orange-primary bg-dark-secondary text-center">
+      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-blue-primary bg-light-secondary dark:bg-dark-secondary text-center">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
@@ -138,7 +138,7 @@ const ServicesPage: React.FC = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white drop-shadow-2xl leading-tight">
-              Our <span className="text-orange-primary">Services</span>
+              Our <span className="text-blue-primary">Services</span>
             </h1>
             <p className="text-xl md:text-2xl text-grey-light font-light drop-shadow-lg max-w-3xl mx-auto">
               Comprehensive solutions for international trade, energy, and engineering
@@ -148,11 +148,11 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 bg-dark-primary border-b border-white/5">
+      <section className="py-20 bg-light-primary dark:bg-dark-primary border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 uppercase tracking-tight">
-              A Global Leader in <span className="text-orange-primary">Energy & Engineering</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-8 uppercase tracking-tight">
+              A Global Leader in <span className="text-blue-primary">Energy & Engineering</span>
             </h2>
             <div className="space-y-6 text-xl text-grey-medium font-light leading-relaxed">
               <p>
@@ -170,7 +170,7 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-dark-primary overflow-hidden">
+      <section className="py-20 bg-light-primary dark:bg-dark-primary overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-24 md:gap-32">
             {services?.map((service: Service, index: number) => (
@@ -181,11 +181,11 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-dark-secondary border-y border-white/5">
+      <section className="py-24 bg-light-secondary dark:bg-dark-secondary border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-widest">
-              Our <span className="text-orange-primary">Service Culture</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6 uppercase tracking-widest">
+              Our <span className="text-blue-primary">Service Culture</span>
             </h2>
             <p className="text-xl text-grey-medium max-w-3xl mx-auto font-light">
               At EAGLE, we pride ourselves in being at the forefront of relevant, modern and technical methodologies.
@@ -195,7 +195,7 @@ const ServicesPage: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-20">
             <div className="space-y-6 text-grey-medium text-lg font-light leading-relaxed">
               <p>
-                Eagle International Group adheres to strict international trading practices such as <span className="text-white font-medium underline decoration-orange-primary underline-offset-4">INCOTERM 2000</span>. All requests and intents to us are to be accompanied by full details of the requesting party.
+                Eagle International Group adheres to strict international trading practices such as <span className="text-slate-800 dark:text-white font-medium underline decoration-orange-primary underline-offset-4">INCOTERM 2000</span>. All requests and intents to us are to be accompanied by full details of the requesting party.
               </p>
               <p>
                 We guide and pride our customers to follow strict contractual procedures, which generally entails placing of financial instrument in accordance with standard banking practices. As part of our best value chain enhancing practice, all intermediaries are identified in advance and are given written engagement of service.
@@ -208,18 +208,18 @@ const ServicesPage: React.FC = () => {
                 "Refreshing approach to service provision",
                 "Retaining most skilled and experienced staff"
               ].map((belief, idx) => (
-                <div key={idx} className="flex items-center gap-4 bg-dark-tertiary/50 p-6 rounded-2xl border border-white/5 hover:border-orange-primary/30 transition-all group">
-                  <div className="w-12 h-12 rounded-full bg-orange-primary/10 flex items-center justify-center text-orange-primary group-hover:scale-110 transition-transform">
+                <div key={idx} className="flex items-center gap-4 bg-light-tertiary dark:bg-dark-tertiary/50 p-6 rounded-2xl border border-white/5 hover:border-blue-primary/30 transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-blue-primary/10 flex items-center justify-center text-blue-primary group-hover:scale-110 transition-transform">
                     <span className="text-2xl">★</span>
                   </div>
-                  <span className="text-white font-medium uppercase tracking-tight">{belief}</span>
+                  <span className="text-slate-800 dark:text-white font-medium uppercase tracking-tight">{belief}</span>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-widest">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6 uppercase tracking-widest">
               Our Process
             </h2>
             <p className="text-xl text-grey-medium max-w-3xl mx-auto font-light">
@@ -254,11 +254,11 @@ const ServicesPage: React.FC = () => {
                   'Continuous monitoring and enhancement of operational performance.',
               },
             ].map((item, index) => (
-              <div key={index} className="relative p-8 bg-dark-tertiary rounded-xl border border-white/5 hover:border-orange-primary/30 transition-colors group">
-                <span className="absolute -top-6 left-8 text-6xl font-black text-white/5 group-hover:text-orange-primary/10 transition-colors">
+              <div key={index} className="relative p-8 bg-light-tertiary dark:bg-dark-tertiary rounded-xl border border-white/5 hover:border-blue-primary/30 transition-colors group">
+                <span className="absolute -top-6 left-8 text-6xl font-black text-slate-800 dark:text-white/5 group-hover:text-blue-primary/10 transition-colors">
                    {item.step}
                 </span>
-                <h4 className="text-xl font-bold text-white mb-4 uppercase tracking-wide relative z-10">
+                <h4 className="text-xl font-bold text-slate-800 dark:text-white mb-4 uppercase tracking-wide relative z-10">
                   {item.title}
                 </h4>
                 <p className="text-grey-medium text-sm leading-relaxed relative z-10">

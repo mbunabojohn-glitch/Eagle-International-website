@@ -41,7 +41,7 @@ const PartnersPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-orange-primary bg-dark-secondary text-center">
+      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-blue-primary bg-light-secondary dark:bg-dark-secondary text-center">
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/images/Petroleum-Logistics.jpg"
@@ -55,7 +55,7 @@ const PartnersPage: React.FC = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white drop-shadow-2xl leading-tight">
-              Partners & <span className="text-orange-primary">Leadership</span>
+              Partners & <span className="text-blue-primary">Leadership</span>
             </h1>
             <p className="text-xl md:text-2xl text-grey-light font-light drop-shadow-lg max-w-3xl mx-auto">
               Driven by a world-class board and technically solid management team.
@@ -65,16 +65,16 @@ const PartnersPage: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section ref={headerRef} className="py-24 bg-dark-primary">
+      <section ref={headerRef} className="py-24 bg-light-primary dark:bg-dark-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={clsx(
             "max-w-4xl transition-all duration-1000 transform",
             headerVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           )}>
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-8 uppercase tracking-tight">
-              Our Core <span className="text-orange-primary">Strength</span>
+            <h2 className="text-3xl md:text-4xl font-black text-slate-800 dark:text-white mb-8 uppercase tracking-tight">
+              Our Core <span className="text-blue-primary">Strength</span>
             </h2>
-            <p className="text-xl text-grey-medium leading-relaxed font-light border-l-4 border-orange-primary/30 pl-6 italic">
+            <p className="text-xl text-grey-medium leading-relaxed font-light border-l-4 border-blue-primary/30 pl-6 italic">
               One of our core strengths is the caliber and composition of its Board of Directors, Management and corporate governance system. The promoters deliberately and judiciously engineered and built an experienced, resourceful and technically solid team.
             </p>
             <p className="mt-6 text-lg text-grey-medium leading-relaxed font-light">
@@ -85,20 +85,20 @@ const PartnersPage: React.FC = () => {
       </section>
 
       {/* Board Functions */}
-      <section className="py-24 bg-dark-secondary border-y border-white/5">
+      <section className="py-24 bg-light-secondary dark:bg-dark-secondary border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-white uppercase tracking-tighter">
-              Functions of <span className="text-orange-primary">The Board</span>
+            <h2 className="text-4xl font-black text-slate-800 dark:text-white uppercase tracking-tighter">
+              Functions of <span className="text-blue-primary">The Board</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {boardFunctions.map((func, i) => (
-              <div key={i} className="bg-dark-tertiary/50 p-8 rounded-2xl border border-white/5 hover:border-orange-primary/30 transition-all group text-center">
+              <div key={i} className="bg-light-tertiary dark:bg-dark-tertiary/50 p-8 rounded-2xl border border-white/5 hover:border-blue-primary/30 transition-all group text-center">
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform inline-block">
                   {func.icon}
                 </div>
-                <h4 className="text-white font-bold uppercase tracking-tight mb-4 group-hover:text-orange-primary transition-colors">
+                <h4 className="text-slate-800 dark:text-white font-bold uppercase tracking-tight mb-4 group-hover:text-blue-primary transition-colors">
                   {func.title}
                 </h4>
                 <p className="text-grey-medium text-sm leading-relaxed">
@@ -111,11 +111,11 @@ const PartnersPage: React.FC = () => {
       </section>
 
       {/* Director Profiles */}
-      <section ref={profilesRef} className="py-24 bg-dark-primary overflow-hidden">
+      <section ref={profilesRef} className="py-24 bg-light-primary dark:bg-dark-primary overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
-              Board <span className="text-orange-primary">Profiles</span>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-800 dark:text-white uppercase tracking-tighter">
+              Board <span className="text-blue-primary">Profiles</span>
             </h2>
           </div>
 
@@ -129,8 +129,8 @@ const PartnersPage: React.FC = () => {
                     profilesVisible ? "translate-x-0 opacity-100" : isEven ? "-translate-x-20 opacity-0" : "translate-x-20 opacity-0",
                     !isEven ? "md:order-2" : ""
                   )}>
-                    <div className="absolute -inset-4 bg-orange-primary/10 rounded-3xl blur-2xl group-hover:bg-orange-primary/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                    <Card className="relative h-[450px] lg:h-[550px] bg-dark-secondary border border-white/5 shadow-2xl overflow-hidden rounded-2xl p-0">
+                    <div className="absolute -inset-4 bg-blue-primary/10 rounded-3xl blur-2xl group-hover:bg-blue-primary/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                    <Card className="relative h-[450px] lg:h-[550px] bg-light-secondary dark:bg-dark-secondary border border-white/5 shadow-2xl overflow-hidden rounded-2xl p-0">
                       <img
                         src={profile.image}
                         alt={profile.name}
@@ -138,10 +138,10 @@ const PartnersPage: React.FC = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                       <div className="absolute bottom-8 left-8 right-8">
-                        <h3 className="text-2xl lg:text-3xl font-black text-white uppercase tracking-tighter leading-tight mb-2">
+                        <h3 className="text-2xl lg:text-3xl font-black text-slate-800 dark:text-white uppercase tracking-tighter leading-tight mb-2">
                           {profile.name}
                         </h3>
-                        <p className="text-orange-primary font-bold uppercase tracking-widest text-sm">
+                        <p className="text-blue-primary font-bold uppercase tracking-widest text-sm">
                           {profile.role}
                         </p>
                       </div>
@@ -158,7 +158,7 @@ const PartnersPage: React.FC = () => {
                       ))}
                     </div>
                     <div className="pt-4">
-                      <div className="h-1 w-20 bg-orange-primary rounded-full"></div>
+                      <div className="h-1 w-20 bg-blue-primary rounded-full"></div>
                     </div>
                   </div>
                 </div>

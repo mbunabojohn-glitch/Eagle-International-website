@@ -6,7 +6,9 @@ export type {
   LoaderProps, 
   HeroSlide,
   NavigationLink,
-  Stat
+  Stat,
+  EnergyPrice,
+  EIADataResponse
 } from "./common";
 
 export type { 

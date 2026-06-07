@@ -17,12 +17,14 @@ interface CarouselState {
 const defaultSlides: HeroSlide[] = [
   {
     id: "1",
+    video: "/videos/port-drilling.mp4",
     title: "Eagle International Group LLC",
     description:
       "Soaring high to make the difference with the best practice in the Oil and Gas sub-sector and the Energy industry",
   },
   {
     id: "2",
+    video: "/videos/gas-evaporation.mp4",
     title: "Engineering the",
     highlight: "Future of Energy",
     description:
@@ -30,6 +32,7 @@ const defaultSlides: HeroSlide[] = [
   },
   {
     id: "3",
+    video: "/videos/oil-container.mp4",
     title: "25 Years",
     highlight: "of Global Excellence",
     description:
@@ -37,6 +40,7 @@ const defaultSlides: HeroSlide[] = [
   },
   {
     id: "4",
+    video: "/videos/port-drilling.mp4",
     title: "From Crude to",
     highlight: "Clean Energy",
     description:

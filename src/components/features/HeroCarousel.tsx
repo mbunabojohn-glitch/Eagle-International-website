@@ -31,10 +31,10 @@ const HeroCarousel = () => {
           )}
           style={{ filter: "brightness(1.1) contrast(1.05)" }}
         >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          <source src="/videos/gas-evaporation.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-primary/70 via-dark-primary/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-primary/60 via-transparent to-transparent"></div>
       </div>
 
       <div className="container-custom relative z-10 w-full pt-28 md:pt-40">
@@ -54,22 +54,22 @@ const HeroCarousel = () => {
                   <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1] mb-4 sm:mb-6 text-white uppercase tracking-tighter text-shadow-lg">
                     {slide.title}{" "}
                     {slide.highlight && (
-                      <span className="text-orange-primary block mt-1">
+                      <span className="text-blue-accent block mt-1">
                         {slide.highlight}
                       </span>
                     )}
                   </h1>
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-grey-light font-light mb-6 sm:mb-8 max-w-xl sm:max-w-2xl text-shadow">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-white/80 font-light mb-6 sm:mb-8 max-w-xl sm:max-w-2xl text-shadow">
                     {slide.description}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-slide-up" style={{ animationDelay: '400ms' }}>
                     <Link to="/contact">
-                      <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg shadow-2xl shadow-orange-primary/20">
+                      <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg shadow-2xl shadow-blue-primary/30">
                         Get Started
                       </Button>
                     </Link>
                     <Link to="/services">
-                      <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg border-white text-white hover:bg-white hover:text-black shadow-2xl">
+                      <Button variant="outline" size="lg" className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg border-white text-white hover:bg-white hover:text-blue-primary shadow-2xl">
                         Our Services
                       </Button>
                     </Link>
@@ -81,13 +81,14 @@ const HeroCarousel = () => {
         </div>
       </div>
 
+      {/* Slide indicators */}
       <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-20">
         {slides.map((_, index) => (
           <div
             key={index}
             className={clsx(
               "h-1 sm:h-1.5 transition-all duration-500 rounded-full",
-              index === currentSlide ? "w-8 sm:w-12 bg-orange-primary" : "w-4 sm:w-6 bg-white/30"
+              index === currentSlide ? "w-8 sm:w-12 bg-blue-accent" : "w-4 sm:w-6 bg-white/30"
             )}
           ></div>
         ))}

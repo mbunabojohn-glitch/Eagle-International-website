@@ -32,6 +32,7 @@ export interface HeroSlide {
   description: string;
   highlight?: string;
   image?: string;
+  video?: string;
 }
 
 // Navigation Types
@@ -47,4 +48,25 @@ export interface Stat {
   value: number;
   label: string;
   suffix?: string;
+}
+
+// Market Ticker Types
+export interface EnergyPrice {
+  id: string;
+  name: string;
+  icon: string;
+  currentPrice: number;
+  change: number;
+  percentChange: number;
+  unit: string;
+}
+
+export interface EIADataResponse {
+  response: {
+    data: Array<{
+      period: string;
+      value: number;
+      series: string;
+    }>;
+  };
 }

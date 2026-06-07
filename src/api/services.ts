@@ -1,5 +1,5 @@
 import api from "./base";
-import type { ServiceResponse, ContactFormData, ContactResponse } from "../types";
+import type { ServiceResponse, ContactFormData, ContactResponse, EnergyPrice, EIADataResponse } from "../types";
 
 // Services API
 export const servicesApi = {
@@ -38,6 +38,143 @@ export const partnersApi = {
     const response = await api.get("/partners");
     return response.data;
   },
+};
+
+// Market Ticker API (EIA)
+export const marketTickerApi = {
+  // Get energy prices from EIA API (with mock data as fallback)
+  getEnergyPrices: async (): Promise<EnergyPrice[]> => {
+    // Mock data for development/testing
+    const mockPrices: EnergyPrice[] = [
+      {
+        id: "brent",
+        name: "Brent Crude Oil",
+        icon: "🛢️",
+        currentPrice: 85.50,
+        change: 1.25,
+        percentChange: 1.48,
+        unit: "USD/bbl",
+      },
+      {
+        id: "wti",
+        name: "WTI Crude Oil",
+        icon: "🛢️",
+        currentPrice: 82.30,
+        change: -0.80,
+        percentChange: -0.96,
+        unit: "USD/bbl",
+      },
+      {
+        id: "natural_gas",
+        name: "Natural Gas",
+        icon: "💨",
+        currentPrice: 2.95,
+        change: 0.15,
+        percentChange: 5.36,
+        unit: "USD/MMBtu",
+      },
+      {
+        id: "heating_oil",
+        name: "Heating Oil",
+        icon: "🔥",
+        currentPrice: 2.45,
+        change: 0.05,
+        percentChange: 2.08,
+        unit: "USD/gal",
+      },
+      {
+        id: "gasoline",
+        name: "Gasoline",
+        icon: "⛽",
+        currentPrice: 2.80,
+        change: -0.03,
+        percentChange: -1.07,
+        unit: "USD/gal",
+      },
+      {
+        id: "propane",
+        name: "Propane",
+        icon: "💧",
+        currentPrice: 1.75,
+        change: 0.08,
+        percentChange: 4.76,
+        unit: "USD/gal",
+      },
+    ];
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(mockPrices), 800);
+    });
+    
+    // Uncomment below for actual EIA API calls
+    /*
+    const apiKey = import.meta.env.VITE_EIA_API_KEY;
+    
+    if (!apiKey) {
+      // Fetch data for all three products
+      // Note: You'll need to adjust the series IDs based on EIA's actual API structure
+      // For now, using mock data is recommended during development
+      const [brentData, wtiData, gasData] = await Promise.all([
+        fetchEIAPetroleumPrice("PET.WTISHD.M", "RBRTE"), // Example series ID
+        fetchEIAPetroleumPrice("PET.RBRTE.D", "RBRTE"),
+        fetchEIANaturalGasPrice("NG.RNGWHHD.D"),
+      ]);
+      
+      // Process and return data
+      return [
+        {
+          id: "brent",
+          name: "Brent Crude Oil",
+          icon: "🛢️",
+          currentPrice: brentData,
+          change: 1.25,
+          percentChange: 1.54,
+          unit: "USD/bbl"
+        },
+        {
+          id: "wti",
+          name: "WTI Crude Oil",
+          icon: "⛽",
+          currentPrice: wtiData,
+          change: -0.45,
+          percentChange: -0.57,
+          unit: "USD/bbl"
+        },
+        {
+          id: "natural_gas",
+          name: "Natural Gas",
+          icon: "🔥",
+          currentPrice: gasData,
+          change: 0.12,
+          percentChange: 4.39,
+          unit: "USD/MMBtu"
+        }
+      ];
+    }
+    
+    // Fallback to mock
+    return mockPrices;
+    */
+  },
+};
+
+// Helper function to fetch EIA petroleum price
+const fetchEIAPetroleumPrice = async (endpoint: string, seriesId: string): Promise<number> => {
+  const apiKey = import.meta.env.VITE_EIA_API_KEY;
+  const response = await fetch(
+    `https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=${apiKey}&frequency=daily&data[0]=value&sort[0][column]=period&sort[0][direction]=desc&length=1`
+  );
+  const data: EIADataResponse = await response.json();
+  return data.response.data[0].value;
+};
+
+// Helper function to fetch EIA natural gas price
+const fetchEIANaturalGasPrice = async (seriesId: string): Promise<number> => {
+  const apiKey = import.meta.env.VITE_EIA_API_KEY;
+  const response = await fetch(
+    `https://api.eia.gov/v2/natural-gas/pri/fut/data/?api_key=${apiKey}&frequency=daily&data[0]=value&sort[0][column]=period&sort[0][direction]=desc&length=1`
+  );
+  const data: EIADataResponse = await response.json();
+  return data.response.data[0].value;
 };
 
 export const mockServices: ServiceResponse = [

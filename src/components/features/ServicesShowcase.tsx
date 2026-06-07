@@ -56,32 +56,24 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
   const displayServices = limit ? services.slice(0, limit) : services;
 
   const bookVariants = {
-    hidden: {
-      rotateY: -90,
-      opacity: 0,
-      transformOrigin: "left"
-    },
+    hidden: { rotateY: -90, opacity: 0, transformOrigin: "left" },
     visible: (i: number) => ({
       rotateY: 0,
       opacity: 1,
-      transition: {
-        duration: 0.8,
-        delay: i * 0.2,
-        ease: [0.45, 0.05, 0.55, 0.95]
-      }
+      transition: { duration: 0.8, delay: i * 0.2, ease: [0.45, 0.05, 0.55, 0.95] }
     })
   };
 
   return (
-    <section ref={elementRef} className="py-12 md:py-24 bg-dark-primary overflow-hidden">
+    <section ref={elementRef} className="py-12 md:py-24 bg-light-primary dark:bg-dark-primary overflow-hidden">
       <div className="container-custom">
         <div
           className={`text-center mb-12 md:mb-20 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 uppercase tracking-tighter">
-            Our <span className="text-orange-primary">Services</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-800 dark:text-white mb-4 md:mb-6 uppercase tracking-tighter">
+            Our <span className="text-blue-primary">Services</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-grey-medium max-w-3xl mx-auto font-light leading-relaxed px-4">
             Comprehensive solutions designed to drive growth and excellence across energy and engineering sectors worldwide.
@@ -98,7 +90,7 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
               variants={bookVariants}
               className="group h-[380px] sm:h-[420px] md:h-[450px] relative preserve-3d cursor-pointer"
             >
-              <Card className="h-full w-full p-0 overflow-hidden relative border-none bg-dark-secondary rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <Card className="h-full w-full p-0 overflow-hidden relative border-none bg-light-secondary dark:bg-dark-secondary rounded-2xl shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
                 <div className="absolute inset-0 z-0">
                   {service.image ? (
                     <img
@@ -107,14 +99,14 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                   ) : (
-                    <div className="w-full h-full bg-dark-tertiary" />
+                    <div className="w-full h-full bg-light-tertiary dark:bg-dark-tertiary" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                 </div>
 
                 <div className="absolute inset-0 z-10 p-4 sm:p-6 md:p-8 flex flex-col justify-end h-full">
                   <div className="transform transition-transform duration-500 group-hover:-translate-y-24 sm:group-hover:-translate-y-28 md:group-hover:-translate-y-32">
-                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 bg-orange-primary/20 w-12 h-12 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center backdrop-blur-sm border border-orange-primary/30">
+                    <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 bg-blue-primary/20 w-12 h-12 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center backdrop-blur-sm border border-blue-primary/30">
                       {service.icon}
                     </div>
                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight mb-2">
@@ -130,7 +122,7 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
                       <Button
                         variant="primary"
                         fullWidth
-                        className="py-3 sm:py-4 text-xs sm:text-sm font-bold shadow-lg shadow-orange-primary/20"
+                        className="py-3 sm:py-4 text-xs sm:text-sm font-bold shadow-lg shadow-blue-primary/30"
                       >
                         Learn More
                       </Button>
@@ -138,7 +130,7 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
                   </div>
                 </div>
 
-                <div className="absolute inset-0 border-2 border-orange-primary/0 group-hover:border-orange-primary/50 rounded-2xl transition-colors duration-500 pointer-events-none" />
+                <div className="absolute inset-0 border-2 border-blue-primary/0 group-hover:border-blue-primary/50 rounded-2xl transition-colors duration-500 pointer-events-none" />
               </Card>
             </motion.div>
           ))}
@@ -150,7 +142,7 @@ const ServicesShowcase: React.FC<ServicesShowcaseProps> = ({
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 sm:px-12 py-3 sm:py-4 border-white text-white hover:bg-white hover:text-black font-bold tracking-wider text-sm sm:text-base"
+                className="px-8 sm:px-12 py-3 sm:py-4 border-blue-primary text-blue-primary hover:bg-blue-primary hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-blue-primary font-bold tracking-wider text-sm sm:text-base"
               >
                 VIEW ALL SERVICES
               </Button>

@@ -1,25 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        dark: {
-          primary: "#0A0A0A",
-          secondary: "#1A1A1A",
-          tertiary: "#2A2A2A",
+        // Light mode surfaces
+        light: {
+          primary: "#FFFFFF",
+          secondary: "#F4F7FB",
+          tertiary: "#E8EEF7",
         },
-        orange: {
-          primary: "#FF6B35",
-          dark: "#E85D2F",
+        // Dark mode surfaces
+        dark: {
+          primary: "#0B1120",
+          secondary: "#111827",
+          tertiary: "#1E293B",
+        },
+        // Blue accent palette (replaces orange)
+        blue: {
+          primary: "#1D56C7",
+          dark: "#1645A8",
+          light: "#3B76E8",
+          accent: "#0EA5E9",
+          muted: "#DBEAFE",
         },
         grey: {
           light: "#CCCCCC",
-          medium: "#888888",
+          medium: "#64748B",
           dark: "#4A4A4A",
-        },
-        blue: {
-          accent: "#2563EB",
         },
       },
       fontFamily: {

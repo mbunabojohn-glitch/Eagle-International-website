@@ -10,8 +10,13 @@
   }
 
   body {
-    @apply bg-dark-primary text-white font-sans antialiased;
+    @apply bg-light-primary text-slate-800 font-sans antialiased transition-colors duration-300;
     overflow-x: hidden;
+  }
+
+  .dark body,
+  body.dark {
+    @apply bg-dark-primary text-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -25,19 +30,25 @@
   }
 
   .btn-primary {
-    @apply bg-orange-primary text-white hover:bg-orange-dark shadow-md;
+    @apply bg-blue-primary text-white hover:bg-blue-dark shadow-md;
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-dark-primary shadow-md;
+    @apply bg-transparent border-2 border-blue-primary text-blue-primary hover:bg-blue-primary hover:text-white shadow-md;
   }
 
+  /* Light mode card */
   .card {
-    @apply bg-dark-secondary border border-dark-tertiary transition-all duration-300;
+    @apply bg-white border border-light-tertiary transition-all duration-300 shadow-sm;
+  }
+
+  /* Dark mode card */
+  .dark .card {
+    @apply bg-dark-secondary border-dark-tertiary;
   }
 
   .card-hover {
-    @apply hover:-translate-y-2 hover:border-orange-primary hover:shadow-xl;
+    @apply hover:-translate-y-2 hover:border-blue-primary hover:shadow-xl;
   }
 
   .container-custom {
@@ -45,7 +56,16 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-orange-primary to-orange-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-primary to-blue-accent bg-clip-text text-transparent;
+  }
+
+  /* Section backgrounds */
+  .section-light {
+    @apply bg-light-primary dark:bg-dark-primary;
+  }
+
+  .section-alt {
+    @apply bg-light-secondary dark:bg-dark-secondary;
   }
 }
 
@@ -63,15 +83,15 @@
   }
 
   .scrollbar-custom::-webkit-scrollbar-track {
-    @apply bg-dark-secondary;
+    @apply bg-light-secondary dark:bg-dark-secondary;
   }
 
   .scrollbar-custom::-webkit-scrollbar-thumb {
-    @apply bg-orange-primary rounded-full;
+    @apply bg-blue-primary rounded-full;
   }
 
   .scrollbar-custom::-webkit-scrollbar-thumb:hover {
-    @apply bg-orange-dark;
+    @apply bg-blue-dark;
   }
 
   .text-shadow {
@@ -89,25 +109,13 @@
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-slide-up {

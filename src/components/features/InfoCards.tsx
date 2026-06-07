@@ -23,7 +23,10 @@ const InfoCards: React.FC<InfoCardsProps> = ({
 }) => {
   const { elementRef, isVisible } = useScrollAnimation();
 
-  const bgClass = variant === "primary" ? "bg-dark-secondary" : "bg-dark-primary";
+  const bgClass =
+    variant === "primary"
+      ? "bg-light-secondary dark:bg-dark-secondary"
+      : "bg-light-primary dark:bg-dark-primary";
 
   return (
     <section ref={elementRef} className={`py-12 md:py-20 ${bgClass}`}>
@@ -33,7 +36,7 @@ const InfoCards: React.FC<InfoCardsProps> = ({
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wider text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wider text-slate-800 dark:text-white">
             {title}
           </h2>
           {subtitle && (
@@ -52,9 +55,9 @@ const InfoCards: React.FC<InfoCardsProps> = ({
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <Card hoverable className="bg-dark-tertiary border border-white/5 h-full">
+              <Card hoverable className="bg-white dark:bg-dark-tertiary border border-light-tertiary dark:border-white/5 h-full shadow-sm hover:shadow-blue-primary/10">
                 <div className="text-4xl sm:text-5xl mb-4">{card.icon}</div>
-                <h3 className="text-lg sm:text-xl font-bold mb-3 text-white uppercase tracking-wide">
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-slate-800 dark:text-white uppercase tracking-wide">
                   {card.title}
                 </h3>
                 <p className="text-grey-medium text-sm sm:text-base">

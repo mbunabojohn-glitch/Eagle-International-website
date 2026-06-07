@@ -24,16 +24,16 @@ const Navigation = ({ mobile, onItemClick }: NavigationProps) => {
                 clsx(
                   "relative px-4 py-2 font-heading font-semibold text-[0.9rem] uppercase tracking-wider transition-all duration-300 block rounded-md group whitespace-nowrap",
                   isActive
-                    ? "text-orange-primary bg-white/5"
-                    : "text-white hover:text-orange-primary hover:bg-white/5",
-                  mobile ? "text-lg py-4 border-b border-white/10" : "text-sm"
+                    ? "text-blue-primary bg-blue-muted dark:bg-blue-primary/10"
+                    : "text-slate-700 dark:text-white hover:text-blue-primary dark:hover:text-blue-primary hover:bg-blue-muted/60 dark:hover:bg-blue-primary/10",
+                  mobile ? "text-lg py-4 border-b border-slate-200 dark:border-white/10" : "text-sm"
                 )
               }
             >
               {link.label}
               {!mobile && (
                 <span
-                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-orange-primary scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"
+                  className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-primary scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"
                 />
               )}
             </NavLink>

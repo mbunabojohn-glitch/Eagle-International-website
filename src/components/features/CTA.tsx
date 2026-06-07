@@ -25,7 +25,7 @@ const CTA: React.FC<CTAProps> = ({
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={elementRef} className="py-16 md:py-24 bg-orange-primary relative overflow-hidden">
+    <section ref={elementRef} className="py-16 md:py-24 bg-blue-primary relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         <div className="absolute -top-24 -left-24 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-white blur-3xl"></div>
         <div className="absolute -bottom-24 -right-24 w-64 sm:w-96 h-64 sm:h-96 rounded-full bg-white blur-3xl"></div>
@@ -48,7 +48,7 @@ const CTA: React.FC<CTAProps> = ({
               <Button
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto bg-white text-orange-primary hover:bg-dark-primary hover:text-white border-none shadow-xl px-6 sm:px-10 py-3 sm:py-4"
+                className="w-full sm:w-auto bg-white text-blue-primary hover:bg-dark-primary hover:text-white border-none shadow-xl px-6 sm:px-10 py-3 sm:py-4"
               >
                 {primaryButton.text}
               </Button>
@@ -58,7 +58,7 @@ const CTA: React.FC<CTAProps> = ({
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-orange-primary px-6 sm:px-10 py-3 sm:py-4"
+                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-blue-primary px-6 sm:px-10 py-3 sm:py-4"
                 >
                   {secondaryButton.text}
                 </Button>

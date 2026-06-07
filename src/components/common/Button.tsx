@@ -10,9 +10,9 @@ function cn(...inputs: ClassValue[]) {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', isLoading, fullWidth, children, disabled, ...props }, ref) => {
     const variants: Record<ButtonVariant, string> = {
-      primary: 'bg-orange-primary text-white hover:bg-orange-dark shadow-md hover:shadow-lg',
-      secondary: 'bg-dark-secondary text-white hover:bg-dark-tertiary border border-dark-tertiary',
-      outline: 'bg-transparent border-2 border-orange-primary text-orange-primary hover:bg-orange-primary hover:text-white',
+      primary: 'bg-blue-primary text-white hover:bg-blue-dark shadow-md hover:shadow-lg hover:shadow-blue-primary/30',
+      secondary: 'bg-light-secondary dark:bg-dark-secondary text-slate-700 dark:text-white hover:bg-light-tertiary dark:hover:bg-dark-tertiary border border-light-tertiary dark:border-dark-tertiary',
+      outline: 'bg-transparent border-2 border-blue-primary text-blue-primary hover:bg-blue-primary hover:text-white',
     };
 
     const sizes: Record<ButtonSize, string> = {
@@ -26,7 +26,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={isLoading || disabled}
         className={cn(
-          'inline-flex items-center justify-center font-heading font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:pointer-events-none',
+          'inline-flex items-center justify-center font-heading font-semibold uppercase tracking-wider transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:pointer-events-none rounded-xl',
           variants[variant],
           sizes[size],
           fullWidth ? 'w-full' : '',

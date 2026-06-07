@@ -1,12 +1,17 @@
 import type { ReactNode } from "react";
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
 
 interface UIState {
   // Mobile menu
   isMobileMenuOpen: boolean;
   toggleMobileMenu: () => void;
   closeMobileMenu: () => void;
+
+  // Theme (dark/light mode)
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+  initTheme: () => void;
 
   // Modal
   isModalOpen: boolean;
@@ -21,23 +26,49 @@ interface UIState {
 
 export const useUIStore = create<UIState>()(
   devtools(
-    (set) => ({
-      // Mobile menu
-      isMobileMenuOpen: false,
-      toggleMobileMenu: () =>
-        set((state) => ({ isMobileMenuOpen: !state.isMobileMenuOpen })),
-      closeMobileMenu: () => set({ isMobileMenuOpen: false }),
+    persist(
+      (set, get) => ({
+        // Mobile menu
+        isMobileMenuOpen: false,
+        toggleMobileMenu: () =>
+          set((state) => ({ isMobileMenuOpen: !state.isMobileMenuOpen })),
+        closeMobileMenu: () => set({ isMobileMenuOpen: false }),
 
-      // Modal
-      isModalOpen: false,
-      modalContent: null,
-      openModal: (content) => set({ isModalOpen: true, modalContent: content }),
-      closeModal: () => set({ isModalOpen: false, modalContent: null }),
+        // Theme
+        isDarkMode: false,
+        toggleDarkMode: () => {
+          const next = !get().isDarkMode;
+          set({ isDarkMode: next });
+          if (next) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        },
+        initTheme: () => {
+          const isDark = get().isDarkMode;
+          if (isDark) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        },
 
-      // Loading
-      isLoading: false,
-      setLoading: (loading) => set({ isLoading: loading }),
-    }),
-    { name: "UI Store" },
-  ),
+        // Modal
+        isModalOpen: false,
+        modalContent: null,
+        openModal: (content) => set({ isModalOpen: true, modalContent: content }),
+        closeModal: () => set({ isModalOpen: false, modalContent: null }),
+
+        // Loading
+        isLoading: false,
+        setLoading: (loading) => set({ isLoading: loading }),
+      }),
+      {
+        name: "eagle-ui-store",
+        partialize: (state) => ({ isDarkMode: state.isDarkMode }),
+      }
+    ),
+    { name: "UI Store" }
+  )
 );

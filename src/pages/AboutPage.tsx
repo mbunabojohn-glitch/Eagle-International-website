@@ -31,7 +31,7 @@ const AnimatedAboutSection: React.FC<AnimatedAboutSectionProps> = ({
       id={id}
       className={clsx(
         "py-24 overflow-hidden",
-        isEven ? "bg-dark-primary" : "bg-dark-secondary border-y border-white/5"
+        isEven ? "bg-light-primary dark:bg-dark-primary" : "bg-light-secondary dark:bg-dark-secondary border-y border-white/5"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,8 +48,8 @@ const AnimatedAboutSection: React.FC<AnimatedAboutSectionProps> = ({
               isEven ? "md:order-2" : ""
             )}
           >
-            <div className="absolute -inset-4 bg-orange-primary/10 rounded-3xl blur-2xl group-hover:bg-orange-primary/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-            <Card className="relative h-[400px] lg:h-[500px] bg-dark-secondary border border-white/5 shadow-2xl overflow-hidden rounded-2xl p-0">
+            <div className="absolute -inset-4 bg-blue-primary/10 rounded-3xl blur-2xl group-hover:bg-blue-primary/20 transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+            <Card className="relative h-[400px] lg:h-[500px] bg-light-secondary dark:bg-dark-secondary border border-white/5 shadow-2xl overflow-hidden rounded-2xl p-0">
               <img
                 src={image}
                 alt={title}
@@ -58,7 +58,7 @@ const AnimatedAboutSection: React.FC<AnimatedAboutSectionProps> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
               {subtitle && (
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="inline-block px-4 py-1 rounded-full bg-orange-primary/20 backdrop-blur-md border border-orange-primary/30 text-orange-primary text-xs font-bold uppercase tracking-widest mb-2">
+                  <span className="inline-block px-4 py-1 rounded-full bg-blue-primary/20 backdrop-blur-md border border-blue-primary/30 text-blue-primary text-xs font-bold uppercase tracking-widest mb-2">
                     {subtitle}
                   </span>
                 </div>
@@ -78,20 +78,20 @@ const AnimatedAboutSection: React.FC<AnimatedAboutSectionProps> = ({
             )}
           >
             <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-none">
+              <h2 className="text-4xl lg:text-5xl font-black text-slate-800 dark:text-white uppercase tracking-tighter leading-none">
                 {title.split(" ").map((word, i) => (
                   <span
                     key={i}
-                    className={i === 0 ? "text-white" : "text-orange-primary"}
+                    className={i === 0 ? "text-slate-800 dark:text-white" : "text-blue-primary"}
                   >
                     {word}{" "}
                   </span>
                 ))}
               </h2>
-              <div className="h-1.5 w-24 bg-orange-primary rounded-full"></div>
+              <div className="h-1.5 w-24 bg-blue-primary rounded-full"></div>
             </div>
 
-            <div className="text-xl text-grey-medium leading-relaxed font-light border-l-4 border-orange-primary/30 pl-6 space-y-4">
+            <div className="text-xl text-grey-medium leading-relaxed font-light border-l-4 border-blue-primary/30 pl-6 space-y-4">
               {description}
             </div>
           </div>
@@ -126,7 +126,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-orange-primary bg-dark-secondary text-center">
+      <section className="relative py-24 flex items-center justify-center overflow-hidden border-b-2 border-blue-primary bg-light-secondary dark:bg-dark-secondary text-center">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <img
@@ -141,7 +141,7 @@ const AboutPage: React.FC = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter text-white drop-shadow-2xl leading-tight">
-              About <span className="text-orange-primary">Us</span>
+              About <span className="text-blue-primary">Us</span>
             </h1>
             <p className="text-xl md:text-2xl text-grey-light font-light drop-shadow-lg max-w-3xl mx-auto">
               A supply chain value enhancer and service company driven by
